@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccqpp6exryptn"]
+
+[ext_resource type="PackedScene" uid="uid://cvg3p5umgimm" path="res://Scenes/Core/Camera/main_camera.tscn" id="1_hw5vy"]
+[ext_resource type="PackedScene" uid="uid://bwbt0q6y25ktt" path="res://Scenes/Characters/main_character/main_character.tscn" id="2_4avsx"]
+[ext_resource type="PackedScene" uid="uid://d3r0q7g1bkmhb" path="res://Scenes/Core/change_scenes/change_scenes.tscn" id="3_m5b4v"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hcb6n"]
+font_size = 80
+
+[node name="Level1" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -158.0
+offset_top = -552.0
+offset_right = 134.0
+offset_bottom = -442.0
+text = "NIVEL 1"
+label_settings = SubResource("LabelSettings_hcb6n")
+
+[node name="MainCamera" parent="." node_paths=PackedStringArray("character") instance=ExtResource("1_hw5vy")]
+position = Vector2(-3, -17)
+character = NodePath("../main_character")
+
+[node name="ChangeScenes" parent="." instance=ExtResource("3_m5b4v")]
+position = Vector2(291, -267)
+scale = Vector2(5.77659, 5.7068)
+
+[node name="main_character" parent="." instance=ExtResource("2_4avsx")]
+position = Vector2(-15, -1)
+collision_layer = 4
+collision_mask = 26

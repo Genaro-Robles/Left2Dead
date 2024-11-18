@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuvnb8u8770dx"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/main_menu/main_menu.gd" id="1_kwu4h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_63k12"]
+font_size = 100
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_kwu4h")
+new_scene = "res://Scenes/Levels/level_1/level_1.tscn"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -249.0
+offset_top = -298.0
+offset_right = 246.0
+offset_bottom = -161.0
+text = "Left2Dead"
+label_settings = SubResource("LabelSettings_63k12")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_as_relative = false
+offset_left = -140.0
+offset_top = -56.0
+offset_right = -63.0
+offset_bottom = 64.0
+scale = Vector2(3.3685, 0.778184)
+color = Color(0, 0.85098, 0.133333, 1)
+
+[node name="Button" type="Button" parent="."]
+offset_left = -140.0
+offset_top = -56.0
+offset_right = 121.0
+offset_bottom = 39.0
+text = "NUEVA PARTIDA"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
