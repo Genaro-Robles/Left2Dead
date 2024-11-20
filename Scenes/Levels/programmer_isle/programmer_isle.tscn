@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs3vgve8bxujq"]
+
+[ext_resource type="PackedScene" uid="uid://bwbt0q6y25ktt" path="res://Scenes/Characters/main_character/main_character.tscn" id="1_xicca"]
+[ext_resource type="PackedScene" uid="uid://cvg3p5umgimm" path="res://Scenes/Core/Camera/main_camera.tscn" id="2_csm56"]
+
+[node name="ProgrammerIsle" type="Node2D"]
+
+[node name="main_character" parent="." instance=ExtResource("1_xicca")]
+position = Vector2(269, 106)
+
+[node name="MainCamera" parent="." node_paths=PackedStringArray("character") instance=ExtResource("2_csm56")]
+position = Vector2(271, 99)
+character = NodePath("../main_character")
