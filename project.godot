@@ -52,10 +52,11 @@ abajo={
 [layer_names]
 
 2d_physics/layer_1="Fondo"
-2d_physics/layer_2="Objetos"
-2d_physics/layer_3="Player"
-2d_physics/layer_4="Enemigos"
-2d_physics/layer_5="Refugio"
+2d_physics/layer_2="Muros"
+2d_physics/layer_3="Objetos"
+2d_physics/layer_4="Player"
+2d_physics/layer_5="Enemigos"
+2d_physics/layer_6="Refugio"
 
 [rendering]
 
