@@ -1,16 +1,19 @@
-extends Node2D
-@export_file('*.tscn') var new_scene
+extends Control
+@onready var btn_jugar_sound = $btn_jugar_sound
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass	
+
+func _on_jugar_pressed():
+	btn_jugar_sound.play()
+	await btn_jugar_sound.finished
+	ScreenTransition.load_scene("res://Scenes/Levels/level_1/level_1.tscn")
+
+func _on_salir_pressed():
+	get_tree().quit()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
-func _on_button_pressed():
-	get_tree().change_scene_to_file(new_scene)
-	pass
+func _on_creditos_pressed():
+	btn_jugar_sound.play()
+	await btn_jugar_sound.finished
+	ScreenTransition.load_scene("res://Scenes/Core/CreditsScene/CreditsScene.tscn")

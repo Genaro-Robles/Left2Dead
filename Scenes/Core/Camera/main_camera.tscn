@@ -3,4 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Core/Camera/main_camera.gd" id="1_vwii6"]
 
 [node name="MainCamera" type="Camera2D"]
+zoom = Vector2(5, 5)
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
 script = ExtResource("1_vwii6")

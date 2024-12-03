@@ -1,29 +1,179 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwbt0q6y25ktt"]
+[gd_scene load_steps=25 format=3 uid="uid://bwbt0q6y25ktt"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/main_character/main_character.gd" id="1_fm84q"]
+[ext_resource type="Texture2D" uid="uid://cgyu2dn580p10" path="res://Assets/Sprites/main_character/walk_down/Zombie-Tileset---_0477_Capa-478.png" id="2_pb7bw"]
+[ext_resource type="Texture2D" uid="uid://dvulljtdg7vve" path="res://Assets/Sprites/main_character/Zombie-Tileset---_0476_Capa-477.png" id="2_tmgtq"]
+[ext_resource type="Texture2D" uid="uid://cgdrp638fc77c" path="res://Assets/Sprites/main_character/damaged/Zombie-Tileset---_0488_Capa-489.png" id="3_7dvod"]
+[ext_resource type="Texture2D" uid="uid://srf7f3uu1ssr" path="res://Assets/Sprites/main_character/walk_down/Zombie-Tileset---_0478_Capa-479.png" id="3_emrl3"]
+[ext_resource type="Texture2D" uid="uid://dsqb6eiwb58m1" path="res://Assets/Sprites/main_character/damaged/Zombie-Tileset---_0489_Capa-490.png" id="4_oh78x"]
+[ext_resource type="Texture2D" uid="uid://jo84agye7dyb" path="res://Assets/Sprites/main_character/damaged/Zombie-Tileset---_0490_Capa-491.png" id="5_k28uf"]
+[ext_resource type="Texture2D" uid="uid://cjq2e0eeicekj" path="res://Assets/Sprites/main_character/walk_right/Zombie-Tileset---_0480_Capa-481.png" id="6_3u4f1"]
+[ext_resource type="Texture2D" uid="uid://3pybbxppx6pl" path="res://Assets/Sprites/main_character/walk_right/Zombie-Tileset---_0481_Capa-482.png" id="7_vixbf"]
+[ext_resource type="Script" path="res://Scenes/Characters/main_character/HandAnchor.gd" id="9_2njhu"]
+[ext_resource type="Texture2D" uid="uid://csr5cl4f1hx1w" path="res://Assets/Sprites/weapons/pistol.png" id="9_7l6ev"]
+[ext_resource type="Texture2D" uid="uid://u2lq5pry1wl1" path="res://Assets/Sprites/main_character/walk_up/Zombie-Tileset---_0483_Capa-484.png" id="9_gtcem"]
+[ext_resource type="Texture2D" uid="uid://c36003bb6naka" path="res://Assets/Sprites/weapons/animation_pistol/Zombie-Tileset---_0370_Capa-371.png" id="10_pgmvh"]
+[ext_resource type="Texture2D" uid="uid://c4kg6cvju3p8g" path="res://Assets/Sprites/main_character/walk_up/Zombie-Tileset---_0484_Capa-485.png" id="10_uku5a"]
+[ext_resource type="Texture2D" uid="uid://bucy25ywlrgtt" path="res://Assets/Sprites/weapons/animation_pistol/Zombie-Tileset---_0371_Capa-372.png" id="11_5b4tq"]
+[ext_resource type="AudioStream" uid="uid://8j0d0s2ygfh8" path="res://Assets/Sounds/pasos/pasos-rapidos.mp3" id="11_q8m2w"]
+[ext_resource type="Texture2D" uid="uid://cfytflfs3wtjd" path="res://Assets/Sprites/weapons/animation_pistol/Zombie-Tileset---_0372_Capa-373.png" id="12_ecjhn"]
+[ext_resource type="AudioStream" uid="uid://di648ioilach8" path="res://Assets/Sounds/pistola/reload.mp3" id="15_dqav8"]
+[ext_resource type="AudioStream" uid="uid://vcqpknx71hbq" path="res://Assets/Sounds/pistola/no-ammo.mp3" id="15_jn2gu"]
+[ext_resource type="AudioStream" uid="uid://dtj5fv0ao2x6i" path="res://Assets/Sounds/player_damaged.mp3" id="20_hsma7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3bvx"]
-size = Vector2(40, 40)
+size = Vector2(13.8646, 14.6442)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wk7s1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tmgtq")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7dvod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_oh78x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k28uf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7dvod")
+}],
+"loop": false,
+"name": &"damaged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_3u4f1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vixbf")
+}],
+"loop": true,
+"name": &"walk_X",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pb7bw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_emrl3")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_gtcem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_uku5a")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qbfqu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_pgmvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5b4tq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ecjhn")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3iv4"]
+size = Vector2(15.0896, 15.8691)
 
 [node name="main_character" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+collision_layer = 8
+collision_mask = 54
+platform_floor_layers = 4294901761
+platform_wall_layers = 2
 script = ExtResource("1_fm84q")
-speed = 300.0
+speed = 50.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(10, -10)
+position = Vector2(-0.32893, 0.0483329)
 shape = SubResource("RectangleShape2D_o3bvx")
 
-[node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wk7s1")
+animation = &"damaged"
+
+[node name="HandAnchor" type="Node2D" parent="."]
+script = ExtResource("9_2njhu")
+
+[node name="Shooter" type="Node2D" parent="HandAnchor"]
+position = Vector2(16, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="HandAnchor/Shooter"]
+position = Vector2(-4, 2)
+texture = ExtResource("9_7l6ev")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HandAnchor/Shooter/Sprite2D"]
+position = Vector2(6.46352, -1.12568)
+sprite_frames = SubResource("SpriteFrames_qbfqu")
+animation = &"idle"
+speed_scale = 0.97
+
+[node name="Reload" type="Timer" parent="."]
+wait_time = 0.6
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_q8m2w")
+volume_db = -15.0
+
+[node name="no_ammo_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_jn2gu")
+volume_db = -15.0
+
+[node name="reload_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_dqav8")
+volume_db = -15.0
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.217568, 0.104014)
+shape = SubResource("RectangleShape2D_k3iv4")
+debug_color = Color(0.980392, 0, 0.384314, 0.419608)
+
+[node name="golpe_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_hsma7")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,38 +1,134 @@
-[gd_scene load_steps=3 format=3 uid="uid://cuvnb8u8770dx"]
+[gd_scene load_steps=10 format=3 uid="uid://cuvnb8u8770dx"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/main_menu/main_menu.gd" id="1_kwu4h"]
+[ext_resource type="Texture2D" uid="uid://c7wbr3xebv6hk" path="res://Scenes/arte/Fondo de pantalla (lugar abandonado).jpg" id="2_n0kts"]
+[ext_resource type="FontFile" uid="uid://dr4swt6hi0q6c" path="res://Scenes/arte/Kenney Pixel.ttf" id="3_07u4j"]
+[ext_resource type="Texture2D" uid="uid://ds555hghkg7db" path="res://Scenes/arte/left2dead-fondo.png" id="4_76xbt"]
+[ext_resource type="Texture2D" uid="uid://cldl1cc7he8gu" path="res://Scenes/arte/blood.png" id="5_sj467"]
+[ext_resource type="Texture2D" uid="uid://c1o0bphpjdi4i" path="res://Scenes/arte/blood2.png" id="6_855wq"]
+[ext_resource type="Texture2D" uid="uid://bnl22li572vcy" path="res://Scenes/arte/hand-blood.png" id="7_laeko"]
+[ext_resource type="AudioStream" uid="uid://b24ohsedbidsv" path="res://Assets/Sounds/fondo_juegoL2D.mp3" id="8_cqgep"]
+[ext_resource type="AudioStream" uid="uid://cg6i5e5k1f8ip" path="res://Assets/Sounds/btn_jugar_sound.mp3" id="9_g6xry"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_63k12"]
-font_size = 100
-
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_kwu4h")
-new_scene = "res://Scenes/Levels/level_1/level_1.tscn"
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="TextureRectFondo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_n0kts")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -249.0
-offset_top = -298.0
-offset_right = 246.0
-offset_bottom = -161.0
-text = "Left2Dead"
-label_settings = SubResource("LabelSettings_63k12")
+[node name="TextureTittle" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.26
+anchor_right = 0.5
+anchor_bottom = 0.26
+offset_left = -392.0
+offset_top = -157.48
+offset_right = 401.0
+offset_bottom = 157.52
+grow_horizontal = 2
+texture = ExtResource("4_76xbt")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-z_as_relative = false
-offset_left = -140.0
-offset_top = -56.0
-offset_right = -63.0
-offset_bottom = 64.0
-scale = Vector2(3.3685, 0.778184)
-color = Color(0, 0.85098, 0.133333, 1)
+[node name="blood1" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -202.0
+offset_right = 622.0
+offset_bottom = 262.0
+grow_vertical = 0
+auto_translate = false
+localize_numeral_system = false
+texture = ExtResource("5_sj467")
 
-[node name="Button" type="Button" parent="."]
-offset_left = -140.0
-offset_top = -56.0
-offset_right = 121.0
-offset_bottom = 39.0
-text = "NUEVA PARTIDA"
+[node name="blood2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.97
+anchor_top = 0.526
+anchor_right = 0.97
+anchor_bottom = 0.526
+offset_left = -149.44
+offset_top = -138.848
+offset_right = 136.56
+offset_bottom = 147.152
+texture = ExtResource("6_855wq")
+expand_mode = 2
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Hand-blood2" type="Sprite2D" parent="blood2"]
+position = Vector2(-7, 94)
+scale = Vector2(0.711111, 0.638889)
+texture = ExtResource("7_laeko")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.525
+anchor_right = 0.5
+anchor_bottom = 0.525
+offset_left = -65.0
+offset_top = -80.7
+offset_right = 83.0
+offset_bottom = 205.3
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 41
+
+[node name="Jugar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_07u4j")
+theme_override_font_sizes/font_size = 80
+text = "Jugar"
+flat = true
+
+[node name="Creditos" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_07u4j")
+theme_override_font_sizes/font_size = 80
+text = "Creditos"
+flat = true
+
+[node name="Salir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_07u4j")
+theme_override_font_sizes/font_size = 80
+text = "Salir"
+flat = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_cqgep")
+volume_db = -20.0
+autoplay = true
+
+[node name="btn_jugar_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_g6xry")
+volume_db = 10.0
+
+[connection signal="pressed" from="VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]

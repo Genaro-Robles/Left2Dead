@@ -1,0 +1,314 @@
+[gd_scene load_steps=31 format=3 uid="uid://byyw7e3c5w67v"]
+
+[ext_resource type="FontFile" uid="uid://dr4swt6hi0q6c" path="res://Scenes/arte/Kenney Pixel.ttf" id="1_2ofmg"]
+[ext_resource type="Script" path="res://Scenes/Core/CreditsScene/CreditsScene.gd" id="1_c5553"]
+[ext_resource type="AudioStream" uid="uid://khp5riynqewp" path="res://Assets/Sounds/back_menu.mp3" id="3_iao4e"]
+[ext_resource type="AudioStream" uid="uid://dpm1iwca5qvqc" path="res://Assets/Sounds/judas_credits.mp3" id="4_pkygv"]
+[ext_resource type="Texture2D" uid="uid://j8jogyws532u" path="res://Assets/Sprites/Enemies/Zombie/damaged/Zombie-Tileset---_0421_Capa-422.png" id="5_p6n08"]
+[ext_resource type="Texture2D" uid="uid://db6stbshyx3nf" path="res://Assets/Sprites/Enemies/Zombie/damaged/Zombie-Tileset---_0422_Capa-423.png" id="6_dllpm"]
+[ext_resource type="Texture2D" uid="uid://d0emu6iege7r5" path="res://Assets/Sprites/Enemies/Zombie/damaged/Zombie-Tileset---_0423_Capa-424.png" id="7_rsx4j"]
+[ext_resource type="Texture2D" uid="uid://cebhr2rr1w8u2" path="res://Assets/Sprites/Enemies/Zombie/Zombie-Tileset---_0412_Capa-413.png" id="8_m1fmr"]
+[ext_resource type="Texture2D" uid="uid://brkqpctel7woh" path="res://Assets/Sprites/Enemies/Zombie/Zombie-Tileset---_0413_Capa-414.png" id="9_pdw0g"]
+[ext_resource type="Texture2D" uid="uid://b73jtp2b2x4ih" path="res://Assets/Sprites/Enemies/Zombie/Zombie-Tileset---_0414_Capa-415.png" id="10_p1bs3"]
+[ext_resource type="Texture2D" uid="uid://dog86bsrgkm2c" path="res://Assets/Sprites/Enemies/Zombie/Zombie-Tileset---_0415_Capa-416.png" id="11_j5dly"]
+[ext_resource type="Texture2D" uid="uid://vx6fq6rdobjp" path="res://Assets/Sprites/Enemies/Zombie/Zombie-Tileset---_0416_Capa-417.png" id="12_ph8q4"]
+[ext_resource type="Texture2D" uid="uid://du3qhc8stci2e" path="res://Assets/Sprites/Enemies/Zombie/Zombie-Tileset---_0417_Capa-418.png" id="13_3au43"]
+[ext_resource type="Texture2D" uid="uid://b3tpxqty104bv" path="res://Assets/Sprites/Enemies/Zombie/Zombie-Tileset---_0419_Capa-420.png" id="14_ex4jv"]
+[ext_resource type="Texture2D" uid="uid://cm346urq6l1qm" path="res://Assets/Sprites/Enemies/Zombie/Zombie-Tileset---_0420_Capa-421.png" id="15_0ltc6"]
+[ext_resource type="Texture2D" uid="uid://dvulljtdg7vve" path="res://Assets/Sprites/main_character/Zombie-Tileset---_0476_Capa-477.png" id="16_dorrd"]
+[ext_resource type="Texture2D" uid="uid://cgdrp638fc77c" path="res://Assets/Sprites/main_character/damaged/Zombie-Tileset---_0488_Capa-489.png" id="17_4usm6"]
+[ext_resource type="Texture2D" uid="uid://dsqb6eiwb58m1" path="res://Assets/Sprites/main_character/damaged/Zombie-Tileset---_0489_Capa-490.png" id="18_qoa5u"]
+[ext_resource type="Texture2D" uid="uid://jo84agye7dyb" path="res://Assets/Sprites/main_character/damaged/Zombie-Tileset---_0490_Capa-491.png" id="19_i3mik"]
+[ext_resource type="Texture2D" uid="uid://cjq2e0eeicekj" path="res://Assets/Sprites/main_character/walk_right/Zombie-Tileset---_0480_Capa-481.png" id="20_w0cvn"]
+[ext_resource type="Texture2D" uid="uid://3pybbxppx6pl" path="res://Assets/Sprites/main_character/walk_right/Zombie-Tileset---_0481_Capa-482.png" id="21_tjua3"]
+[ext_resource type="Texture2D" uid="uid://cgyu2dn580p10" path="res://Assets/Sprites/main_character/walk_down/Zombie-Tileset---_0477_Capa-478.png" id="22_u6uhd"]
+[ext_resource type="Texture2D" uid="uid://srf7f3uu1ssr" path="res://Assets/Sprites/main_character/walk_down/Zombie-Tileset---_0478_Capa-479.png" id="23_jucsw"]
+[ext_resource type="Texture2D" uid="uid://u2lq5pry1wl1" path="res://Assets/Sprites/main_character/walk_up/Zombie-Tileset---_0483_Capa-484.png" id="24_1ir0j"]
+[ext_resource type="Texture2D" uid="uid://c4kg6cvju3p8g" path="res://Assets/Sprites/main_character/walk_up/Zombie-Tileset---_0484_Capa-485.png" id="25_f7cwi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n0inx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_p6n08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dllpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rsx4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_p6n08")
+}],
+"loop": true,
+"name": &"damaged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_m1fmr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_pdw0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_p1bs3")
+}],
+"loop": true,
+"name": &"walking_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_j5dly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ph8q4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3au43")
+}],
+"loop": true,
+"name": &"walking_horizontal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_ex4jv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_0ltc6")
+}],
+"loop": true,
+"name": &"walking_up",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vxg6s"]
+font = ExtResource("1_2ofmg")
+font_size = 60
+font_color = Color(1, 0.411765, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tulcn"]
+font = ExtResource("1_2ofmg")
+font_size = 30
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_riv45"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_dorrd")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_4usm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_qoa5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_i3mik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_4usm6")
+}],
+"loop": true,
+"name": &"damaged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_w0cvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_tjua3")
+}],
+"loop": true,
+"name": &"walk_X",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_u6uhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_jucsw")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_1ir0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_f7cwi")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cdr8x"]
+font = ExtResource("1_2ofmg")
+font_size = 100
+
+[node name="CreditsScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c5553")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.129412, 0.129412, 0.129412, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -211.0
+offset_top = -114.0
+offset_right = 211.0
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="zombie" type="AnimatedSprite2D" parent="HBoxContainer"]
+position = Vector2(-88, 97)
+scale = Vector2(8, 7)
+sprite_frames = SubResource("SpriteFrames_n0inx")
+animation = &"damaged"
+flip_h = true
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+text = "EQUIPO"
+label_settings = SubResource("LabelSettings_vxg6s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label4" type="Label" parent="HBoxContainer/VBoxContainer3/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Genaro Robles - Programador/Game Designer"
+label_settings = SubResource("LabelSettings_tulcn")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="HBoxContainer/VBoxContainer3/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Jesus Lluque - Producer/Level Designer"
+label_settings = SubResource("LabelSettings_tulcn")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer3/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Dafne Inicio - Producer/Music and art"
+label_settings = SubResource("LabelSettings_tulcn")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "ASSETS"
+label_settings = SubResource("LabelSettings_vxg6s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="HBoxContainer/VBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Zombie Apocalypse by Ittai Manero"
+label_settings = SubResource("LabelSettings_tulcn")
+horizontal_alignment = 1
+
+[node name="player" type="AnimatedSprite2D" parent="HBoxContainer"]
+position = Vector2(520, 90)
+scale = Vector2(8, 7)
+sprite_frames = SubResource("SpriteFrames_riv45")
+animation = &"damaged"
+
+[node name="Jugar" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -311.5
+offset_top = -100.0
+offset_right = 311.5
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_2ofmg")
+theme_override_font_sizes/font_size = 80
+text = "Volver al menu Principal"
+flat = true
+
+[node name="regresar_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_iao4e")
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -285.0
+offset_top = 20.0
+offset_right = 285.0
+offset_bottom = 175.0
+grow_horizontal = 2
+text = "GRACIAS POR JUGAR
+ESTA DEMO"
+label_settings = SubResource("LabelSettings_cdr8x")
+horizontal_alignment = 1
+
+[node name="fondo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_pkygv")
+volume_db = -20.0
+autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="pressed" from="Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

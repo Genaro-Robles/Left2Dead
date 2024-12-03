@@ -22,7 +22,7 @@ func _physics_process(delta):
 		# Si el personaje esta muerto dejamos de seguirlo
 		return
 	var charpos = character.position
-	var new_pos = position.lerp(charpos, delta * 2.0)
+	var new_pos = position.lerp(charpos, delta * 10.0)
 	# Ajustamos los valores a números enteros, para evitar mover la cámara demasiadas veces
 	new_pos.x = int(new_pos.x)
 	new_pos.y = int(new_pos.y)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxvamxm7r8dbx"]
+
+[ext_resource type="Script" path="res://Scenes/Level Objects/Ammo/Ammo.gd" id="1_n83cw"]
+[ext_resource type="Texture2D" uid="uid://dau77o4s7nra1" path="res://Assets/Sprites/level_objects/ammo.png" id="2_d5hm5"]
+[ext_resource type="AudioStream" uid="uid://b8io4segqkbuq" path="res://Assets/Sounds/level_objects/anmo.mp3" id="3_pwis8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrkud"]
+size = Vector2(12, 12)
+
+[node name="Ammo" type="Area2D"]
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("1_n83cw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yrkud")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_d5hm5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pwis8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

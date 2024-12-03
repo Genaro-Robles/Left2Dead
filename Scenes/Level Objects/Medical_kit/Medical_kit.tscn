@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dy0qw6xhuynyp"]
+
+[ext_resource type="Texture2D" uid="uid://cqbvsuv3ys6dw" path="res://Assets/Sprites/level_objects/medical_kit.png" id="1_8dxi0"]
+[ext_resource type="Script" path="res://Scenes/Level Objects/Medical_kit/Medical_kit.gd" id="1_ws2bv"]
+[ext_resource type="AudioStream" uid="uid://d1nlh3xipnuia" path="res://Assets/Sounds/level_objects/medical_kit.mp3" id="3_ujabh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrkud"]
+size = Vector2(12, 12)
+
+[node name="MedicalKit" type="Area2D"]
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("1_ws2bv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yrkud")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8dxi0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ujabh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

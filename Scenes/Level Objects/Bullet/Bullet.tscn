@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqy8x4kqaathc"]
+
+[ext_resource type="Script" path="res://Scenes/Level Objects/Bullet/Bullet.gd" id="1_k7dyg"]
+[ext_resource type="Texture2D" uid="uid://cpiqblthva7hn" path="res://Assets/Sprites/level_objects/bullet.png" id="2_khehc"]
+[ext_resource type="AudioStream" uid="uid://b8io4segqkbuq" path="res://Assets/Sounds/level_objects/anmo.mp3" id="3_uelbk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrkud"]
+size = Vector2(12, 12)
+
+[node name="Bullet" type="Area2D"]
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("1_k7dyg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yrkud")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_khehc")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_uelbk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

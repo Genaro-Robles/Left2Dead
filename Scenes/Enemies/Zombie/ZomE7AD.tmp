@@ -1,0 +1,104 @@
+[gd_scene load_steps=14 format=3 uid="uid://ca3cfk3c72wjn"]
+
+[ext_resource type="Script" path="res://Scenes/Enemies/Zombie/Zombie.gd" id="1_kepcd"]
+[ext_resource type="Texture2D" uid="uid://cebhr2rr1w8u2" path="res://Assets/Sprites/Enemies/Zombie/Zombie-Tileset---_0412_Capa-413.png" id="2_2pwme"]
+[ext_resource type="Texture2D" uid="uid://brkqpctel7woh" path="res://Assets/Sprites/Enemies/Zombie/Zombie-Tileset---_0413_Capa-414.png" id="3_ai116"]
+[ext_resource type="Texture2D" uid="uid://b73jtp2b2x4ih" path="res://Assets/Sprites/Enemies/Zombie/Zombie-Tileset---_0414_Capa-415.png" id="4_32phr"]
+[ext_resource type="Texture2D" uid="uid://dog86bsrgkm2c" path="res://Assets/Sprites/Enemies/Zombie/Zombie-Tileset---_0415_Capa-416.png" id="5_c6jfo"]
+[ext_resource type="Texture2D" uid="uid://vx6fq6rdobjp" path="res://Assets/Sprites/Enemies/Zombie/Zombie-Tileset---_0416_Capa-417.png" id="6_fnf5j"]
+[ext_resource type="Texture2D" uid="uid://du3qhc8stci2e" path="res://Assets/Sprites/Enemies/Zombie/Zombie-Tileset---_0417_Capa-418.png" id="7_6pfjw"]
+[ext_resource type="Texture2D" uid="uid://b3tpxqty104bv" path="res://Assets/Sprites/Enemies/Zombie/Zombie-Tileset---_0419_Capa-420.png" id="8_l68e6"]
+[ext_resource type="Texture2D" uid="uid://cm346urq6l1qm" path="res://Assets/Sprites/Enemies/Zombie/Zombie-Tileset---_0420_Capa-421.png" id="9_o7vxw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6biok"]
+radius = 7.0
+height = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_udj2n"]
+radius = 19.0263
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8hko3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2pwme")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ai116")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_32phr")
+}],
+"loop": true,
+"name": &"walking_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_c6jfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fnf5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6pfjw")
+}],
+"loop": true,
+"name": &"walking_horizontal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_l68e6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_o7vxw")
+}],
+"loop": true,
+"name": &"walking_up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rh7c0"]
+radius = 121.017
+
+[node name="Zombie" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 10
+script = ExtResource("1_kepcd")
+velocidad = 50
+vida = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6biok")
+
+[node name="Body" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+shape = SubResource("CircleShape2D_udj2n")
+debug_color = Color(0.905882, 0, 0.741176, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.991047, 0.829753)
+sprite_frames = SubResource("SpriteFrames_8hko3")
+animation = &"walking_horizontal"
+frame_progress = 0.926053
+flip_h = true
+
+[node name="Zona_vision" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zona_vision"]
+shape = SubResource("CircleShape2D_rh7c0")
+
+[connection signal="body_entered" from="Body" to="." method="_on_body_body_entered"]
+[connection signal="body_entered" from="Zona_vision" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Zona_vision" to="." method="_on_area_2d_body_exited"]

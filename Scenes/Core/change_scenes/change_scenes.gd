@@ -11,5 +11,4 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	get_tree().change_scene_to_file("res://Scenes/Levels/level_2/level_2.tscn")
-	print("Entrando al refugio")	
+	ScreenTransition.load_scene("res://Scenes/Core/CreditsScene/CreditsScene.tscn")
